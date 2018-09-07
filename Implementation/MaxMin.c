@@ -47,6 +47,6 @@ int main()
 		printf("\t%d", arr[i]);
 	}
 	RecminMax(arr, 0, n-1, &max, &min);
-	printf("\nMaximum is %d\nMinimum is %d", max, min);
+	printf("\nMaximum is %d\nMinimum is %d\n", max, min);
 	
 }
