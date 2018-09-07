@@ -1,2 +1,2 @@
-# ADA_Lab_Work
+# Analysis and Design Laboratory 
 Implementation of some Algorithms
