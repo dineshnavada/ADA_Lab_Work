@@ -36,11 +36,31 @@ void MergeSort(int A[], int low, int high)
 		Merge(A, low, high, mid);
 	}
 }
+void smallExp()
+{
+	int i,n;
+	printf("Demonstrating for smaller size\nEnter no. of elements:");
+    scanf("%d",&n);
+    int a[n];
+    printf("\nThe unsorted elements are:");
+    for(i=0;i<n;i++)
+	{
+		a[i]=rand()%100;
+		printf("%d\t", a[i]);
+	}
+	MergeSort(a, 0, n-1);
+	printf("\nThe sorted elements are:");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t", a[i]);
+	}
+}
 int main()
 {
 	int n, i, j;
 	srand(time(NULL));
-	//printf("Enter no. of elements:");
+	smallExp();
+	printf("\nRepeating for larger list sizes.......");
 	struct timeval tv;
 	FILE *fp=fopen("mergedata.txt","w");
 	double init, final;
@@ -58,4 +78,5 @@ int main()
 	final=tv.tv_sec+tv.tv_usec/1000000.0;
 	fprintf(fp, "%d\t%f\n", j, final-init);
 	}
+    printf("\nData file mergedata.txt generated in present working directory.\n");
 }
