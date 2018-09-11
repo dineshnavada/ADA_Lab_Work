@@ -1,62 +1,58 @@
+/************************************************
+*Description:Performs Merge Sort using Divide   * 
+*            and conquer tecnique on a list of  *
+             integers.                          *
+*Author:Dinesh K R Navada           			*
+*Date of execution:10 Aug 2018      			*
+*************************************************/
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
-void Merge(int a[], int low, int high, int mid)
-{
+void Merge(int a[], int low, int high, int mid){
 	int i, j, k,b[100000];
 	i=k=low;
 	j=mid+1;
-	while(i<=mid && j<=high)
-	{
+	while(i<=mid && j<=high){
 		if(a[i]<a[j])
 			b[k++]=a[i++];
 		else 
 			b[k++]=a[j++];
 	}
-	 while(i<=mid)
-	 {
+	 while(i<=mid){
 	 	b[k++]=a[i++];
 	 }
-	 while(j<=high)
-	 {
+	 while(j<=high){
 	 	b[k++]=a[j++];
 	 }
 	 for(i=low;i<k;i++)
 	 	a[i]=b[i]; 																	                                                                                                                                                                   
 }
-void MergeSort(int A[], int low, int high)
-{
+void MergeSort(int A[], int low, int high){
 	int mid;
-	if(low<high)
-	{
+	if(low<high){
 		mid=(low+high)/2;
 		MergeSort(A, low, mid);
 		MergeSort(A, mid+1, high);
 		Merge(A, low, high, mid);
 	}
 }
-void smallExp()
-{
+void smallExp(){  //For smaller values of n, to verify sorting
 	int i,n;
 	printf("Demonstrating for smaller size\nEnter no. of elements:");
     scanf("%d",&n);
     int a[n];
     printf("\nThe unsorted elements are:");
-    for(i=0;i<n;i++)
-	{
+    for(i=0;i<n;i++){
 		a[i]=rand()%100;
 		printf("%d\t", a[i]);
 	}
 	MergeSort(a, 0, n-1);
 	printf("\nThe sorted elements are:");
 	for(i=0;i<n;i++)
-	{
-		printf("%d\t", a[i]);
-	}
+		printf("%d\t", a[i]);	
 }
-int main()
-{
+int main(){
 	int n, i, j;
 	srand(time(NULL));
 	smallExp();
@@ -67,10 +63,7 @@ int main()
 	for(j=0;j<100000;j+=100){
 	int arr[j];
 	for(i=0;i<j;i++)
-	{
 		arr[i]=rand()%100;
-		//printf("\t%d", arr[i]);
-	}
 	gettimeofday(&tv, NULL);
 	init=tv.tv_sec+tv.tv_usec/1000000.0;
 	MergeSort(arr, 0, j-1);

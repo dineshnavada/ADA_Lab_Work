@@ -1,11 +1,12 @@
-/*********************************
-*Author:Dinesh K R Navada        *
-*Date of execution:07 Sept 2018  *
-**********************************/
+/********************************************************
+*Description:Performs Insertion Sort using Decrease and * 
+			  conquer technique on a list of  integers. *
+*Author: Dinesh K R Navada                              *
+*Date of execution: 07 Sept 2018                        *
+*********************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
-#include<time.h>
-#include<sys/time.h>
 
 void InsertionSort(int a[], int n){
 	int i, j, v;

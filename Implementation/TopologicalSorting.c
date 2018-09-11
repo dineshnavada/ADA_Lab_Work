@@ -1,7 +1,11 @@
-/*********************************
-*Author:Dinesh K R Navada        *
-*Date of execution:07 Sept 2018  *
-**********************************/
+/***************************************************
+*Description:Performs Topological ordering of      *
+             vertices ofa Directed Acyclic Graph   *
+             (DAG) using Source removal method     * 
+             under Decrease and conquer technique. *
+*Author: Dinesh K R Navada                         *
+*Date of execution: 07 Sept 2018                   *
+****************************************************/
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
